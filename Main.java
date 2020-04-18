@@ -38,11 +38,26 @@ public class Main
         return newgraph;
     }
 
-    public static void main(String[] args)
+    static Graph createLinkedList(int n)
     {
-        Graph gr = createRandomUnweightedGraphIter(5);
-        
+        //Didn't Know if nodes needed to be bidirectional or not.
+        Graph linkedGraph = new Graph();
 
+        for(int i = 0; i < n; i++)
+        {
+            linkedGraph.addNode(Integer.toString(i));
+        }
+        for(int i = 0; i < n-1; i++)
+        {
+            linkedGraph.addSingleEdge(linkedGraph.nodeList.get(i), linkedGraph.nodeList.get(i+1));
+        }
+
+        return linkedGraph;
+    }
+
+    public static void main(String[] args)
+    {        
+        
     }
 
     

@@ -51,6 +51,24 @@ public class Graph
 
         return nodes;
     }
+
+    void addSingleEdge(final Node first, final Node second)
+    {
+        if(first.adjList.indexOf(second) != -1)
+        {
+            return;
+        }
+        else if(second.adjList.indexOf(first) != -1)
+        {
+            return;
+        }
+        else if(second != first)
+        {
+            first.adjList.add(second);
+        }
+
+    }
+
     
 
 }
