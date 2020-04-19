@@ -4,9 +4,13 @@ public class GraphSearch
 {
     ArrayList<Node> arr = new ArrayList<>();
     ArrayList<Node> dfsIter = new ArrayList<>();
+    ArrayList<Node> bftRec = new ArrayList<>();
+
+    Queue<Node> queue = new LinkedList<>();
     int graphSize = 0;
     Graph graph;
     boolean stopRec = false;
+    boolean queueHelper = true;
 
     GraphSearch(Graph gr)
     {
@@ -99,5 +103,40 @@ public class GraphSearch
 
 
         return dfsIter;
+    }
+
+
+    ArrayList<Node> BFTRec(final Graph graph)
+    {
+        boolean visited[] = new boolean[graphSize];
+        Node n;
+
+        if(queueHelper == true)
+        {
+            queue.add(graph.nodeList.get(0));
+            queueHelper = false;
+        }
+
+        if(queue.isEmpty())
+        {
+            return bftRec;
+        }
+
+        n = queue.poll();
+        bftRec.add(n);
+        visited[graph.nodeList.indexOf(n)] = true;
+        for(Node i : n.adjList)
+        {
+            if(!visited[graph.nodeList.indexOf(i)])
+            {
+                visited[graph.nodeList.indexOf(i)] = true;
+                queue.add(i);
+            }
+        }
+
+        BFTRec(graph);
+
+
+        return bftRec;
     }
 }
