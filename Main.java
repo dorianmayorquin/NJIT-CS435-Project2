@@ -58,9 +58,36 @@ public class Main
     public static void main(String[] args)
     {        
         
+
     }
 
     
 
+
+    /*
+        Tester code for GraphSearch
+        Graph gr = new Graph();
+
+        gr.addNode("0");
+        gr.addNode("1");
+        gr.addNode("2");
+        gr.addNode("3");
+        gr.addNode("4");
+        gr.addNode("5");
+        gr.addNode("6");
+        gr.addNode("8");
+        gr.addNode("9");
+        gr.addNode("10");
+
+        gr.addSingleEdge(gr.nodeList.get(0), gr.nodeList.get(1));
+        gr.addSingleEdge(gr.nodeList.get(0), gr.nodeList.get(2));
+        gr.addSingleEdge(gr.nodeList.get(0), gr.nodeList.get(3));
+        gr.addSingleEdge(gr.nodeList.get(0), gr.nodeList.get(4));
+        gr.addSingleEdge(gr.nodeList.get(1), gr.nodeList.get(5));
+        gr.addSingleEdge(gr.nodeList.get(1), gr.nodeList.get(6));
+
+        GraphSearch gs = new GraphSearch(gr);
+
+        System.out.println(gs.DFSRec(gr.nodeList.get(0), gr.nodeList.get(9)));*/
 
 }
