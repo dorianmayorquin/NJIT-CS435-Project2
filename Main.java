@@ -1,4 +1,4 @@
-import java.util.Random;
+import java.util.*;
 
 public class Main
 {
@@ -55,11 +55,19 @@ public class Main
         return linkedGraph;
     }
 
+    static ArrayList<Node> BFTRecLinkedList(final Graph graph)
+    {
+        GraphSearch newsearch = new GraphSearch(graph);
+    
+        return newsearch.BFTRec(graph);
+    }
+
     public static void main(String[] args)
     {       
 
-        
-        
+        Graph gr = createLinkedList(100);
+
+        BFTRecLinkedList(gr);
 
     }
 
