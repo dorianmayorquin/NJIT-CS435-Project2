@@ -3,6 +3,7 @@ import java.util.*;
 public class GraphSearch
 {
     ArrayList<Node> arr = new ArrayList<>();
+    ArrayList<Node> dfsIter = new ArrayList<>();
     int graphSize = 0;
     Graph graph;
     boolean stopRec = false;
@@ -54,6 +55,49 @@ public class GraphSearch
         }
 
         return arr;
+    }
 
+    ArrayList<Node> DFSIter(final Node start, final Node end)
+    {
+        Node node;
+        boolean visited[] = new boolean[graphSize];
+        Stack<Node> stack = new Stack<>();
+
+        stack.push(start);
+
+        while(stack.empty() == false)
+        {
+            node = stack.peek();
+            visited[graph.nodeList.indexOf(node)] = true;
+            dfsIter.add(node);
+            //System.out.println(graph.nodeList.indexOf(node)); //Node Number Output
+            if(node == end)
+            {
+                return dfsIter;
+            }
+            stack.pop();
+
+            Iterator<Node> iterator = node.adjList.listIterator();
+
+            while(iterator.hasNext())
+            {
+                Node n = iterator.next();
+                if(!visited[graph.nodeList.indexOf(n)])
+                {
+                    stack.push(n);
+                }
+
+            }
+
+
+        }
+
+        if(dfsIter.indexOf(end) == -1)
+        {
+            return null;
+        }
+
+
+        return dfsIter;
     }
 }
