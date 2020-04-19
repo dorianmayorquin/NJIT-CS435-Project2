@@ -161,7 +161,7 @@ public class GraphSearch
         {
             n = bftIterQueue.poll();
             bftIter.add(n);
-            System.out.println(graph.nodeList.indexOf(n));
+            //System.out.println(graph.nodeList.indexOf(n));
             visited[graph.nodeList.indexOf(n)]= true;
             for(Node i : n.adjList)
             {

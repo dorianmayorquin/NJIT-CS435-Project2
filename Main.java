@@ -62,12 +62,18 @@ public class Main
         return newsearch.BFTRec(graph);
     }
 
+    static ArrayList<Node> BFTIterLinkedList(final Graph graph)
+    {
+        GraphSearch newsearch = new GraphSearch(graph);
+
+        return newsearch.BFTIter(graph);
+    }
+
     public static void main(String[] args)
     {       
+        Graph gr = createLinkedList(10000);
 
-        Graph gr = createLinkedList(100);
-
-        BFTRecLinkedList(gr);
+        BFTIterLinkedList(gr);
 
     }
 
