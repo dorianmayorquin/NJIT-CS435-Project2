@@ -86,12 +86,9 @@ public class Main
 
         for(int i = 0; i < n; i++)
         {
-            System.out.println(random-1);
-            System.out.println(random2-1);
 
             if(random > 0 && random2 > 0)
             {
-                System.out.println("Exec");
                 newgraph.addDirectedEdge(newgraph.nodeList.get(random-1),newgraph.nodeList.get(random2-1));
             }
             random = rand.nextInt(n);
@@ -114,15 +111,14 @@ public class Main
         Graph gr = createLinkedList(10000);
         BFTIterLinkedList(gr);
 
-        //DirectedGraph dirGra = createRandomDAGIter(7);
-        Graph dirGra = createRandomUnweightedGraphIter(7);
+        DirectedGraph dirGra = createRandomDAGIter(7);
 
-        System.out.println(dirGra.nodeList);
+        /*System.out.println(dirGra.nodeList);
 
         System.out.println(dirGra.nodeList.get(0).adjList);
         System.out.println(dirGra.nodeList.get(1).adjList);
         System.out.println(dirGra.nodeList.get(2).adjList);
-        System.out.println(dirGra.nodeList.get(3).adjList);
+        System.out.println(dirGra.nodeList.get(3).adjList);*/
 
 
 
