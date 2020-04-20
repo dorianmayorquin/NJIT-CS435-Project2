@@ -1,4 +1,11 @@
 import java.util.*;
+interface Graphs
+{
+    List<Node> nodeList = new ArrayList<>(); //List of all Nodes
+    void addNode(final String nodeVal);
+    HashSet<Node> getAllNodes();
+    List<Node> getAllNodesTemp();
+}
 
 public class Graph
 {

@@ -72,8 +72,16 @@ public class Main
     public static void main(String[] args)
     {       
         Graph gr = createLinkedList(10000);
-
         BFTIterLinkedList(gr);
+
+        /*Graphs dirGra = new DirectedGraph();
+        dirGra.addNode("0");
+        dirGra.addNode("1");
+        dirGra.addNode("2");
+        dirGra.addNode("3");
+        dirGra.addNode("4");
+
+        System.out.println(dirGra.getAllNodesTemp());*/
 
     }
 
