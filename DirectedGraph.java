@@ -1,10 +1,9 @@
 import java.util.*;
-
-public class DirectedGraph implements Graphs
+public class DirectedGraph
 {
-    
-   @Override
-   public void addNode(String nodeVal) 
+    List<Node> nodeList = new ArrayList<>(); //List of all Nodes
+
+    void addNode(String nodeVal) 
    {
         Node n = new Node(nodeVal);
         nodeList.add(n);
@@ -46,7 +45,6 @@ public class DirectedGraph implements Graphs
     }
     public List<Node> getAllNodesTemp()
     {
-        
         return nodeList;
     }
 }

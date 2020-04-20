@@ -69,19 +69,27 @@ public class Main
         return newsearch.BFTIter(graph);
     }
 
+    static DirectedGraph createRandomDAGIter(final int n)
+    {
+        DirectedGraph dirGra = new DirectedGraph();
+
+        return dirGra;
+
+    }
+
     public static void main(String[] args)
     {       
         Graph gr = createLinkedList(10000);
         BFTIterLinkedList(gr);
 
-        /*Graphs dirGra = new DirectedGraph();
+        DirectedGraph dirGra = new DirectedGraph();
         dirGra.addNode("0");
         dirGra.addNode("1");
         dirGra.addNode("2");
         dirGra.addNode("3");
         dirGra.addNode("4");
 
-        System.out.println(dirGra.getAllNodesTemp());*/
+        System.out.println(dirGra.getAllNodesTemp());
 
     }
 
