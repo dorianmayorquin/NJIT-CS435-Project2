@@ -11,21 +11,23 @@ public class Main
     {
         Graph newgraph = new Graph();
         Random rand = new Random();
+        Random rand2 = new Random();
         int random = rand.nextInt(n);
-        int random2 = rand.nextInt(n);
+        int random2 = rand2.nextInt(n);
 
-        for(int i = 0; i < random; i++)
+        for(int i = 0; i < n; i++)
         {
-            newgraph.addNode(Integer.toString(random));
+            newgraph.addNode(Integer.toString(n));
         }
 
-        for(int i = 0; i < random; i++)
+        for(int i = 0; i < n; i++)
         {
-            if(random > random2 && random > 0)
+            if(random > 0 && random2 > 0)
             {
-                newgraph.addUndirectedEdge(newgraph.nodeList.get(random-1),newgraph.nodeList.get(random2));
-                random2 = rand.nextInt(n);
+                newgraph.addUndirectedEdge(newgraph.nodeList.get(random-1),newgraph.nodeList.get(random2-1));
             }
+            random = rand.nextInt(n);
+            random2 = rand2.nextInt(n);
         }
 
         /*System.out.println(newgraph.nodeList); //List of all Nodes
@@ -71,9 +73,39 @@ public class Main
 
     static DirectedGraph createRandomDAGIter(final int n)
     {
-        DirectedGraph dirGra = new DirectedGraph();
+        DirectedGraph newgraph = new DirectedGraph();
+        Random rand = new Random();
+        Random rand2 = new Random();
+        int random = rand.nextInt(n);
+        int random2 = rand2.nextInt(n);
 
-        return dirGra;
+        for(int i = 0; i < n; i++)
+        {
+            newgraph.addNode(Integer.toString(n));
+        }
+
+        for(int i = 0; i < n; i++)
+        {
+            System.out.println(random-1);
+            System.out.println(random2-1);
+
+            if(random > 0 && random2 > 0)
+            {
+                System.out.println("Exec");
+                newgraph.addDirectedEdge(newgraph.nodeList.get(random-1),newgraph.nodeList.get(random2-1));
+            }
+            random = rand.nextInt(n);
+            random2 = rand2.nextInt(n);
+        }
+
+        /*System.out.println(newgraph.nodeList); //List of all Nodes
+        for(int i = 0; i < random; i++) // Adj List for Each node
+        {
+            System.out.println(newgraph.nodeList.get(i).adjList);
+        }*/
+        
+
+        return newgraph;
 
     }
 
@@ -82,14 +114,19 @@ public class Main
         Graph gr = createLinkedList(10000);
         BFTIterLinkedList(gr);
 
-        DirectedGraph dirGra = new DirectedGraph();
-        dirGra.addNode("0");
-        dirGra.addNode("1");
-        dirGra.addNode("2");
-        dirGra.addNode("3");
-        dirGra.addNode("4");
+        //DirectedGraph dirGra = createRandomDAGIter(7);
+        Graph dirGra = createRandomUnweightedGraphIter(7);
 
-        System.out.println(dirGra.getAllNodesTemp());
+        System.out.println(dirGra.nodeList);
+
+        System.out.println(dirGra.nodeList.get(0).adjList);
+        System.out.println(dirGra.nodeList.get(1).adjList);
+        System.out.println(dirGra.nodeList.get(2).adjList);
+        System.out.println(dirGra.nodeList.get(3).adjList);
+
+
+
+       
 
     }
 
