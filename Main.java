@@ -111,25 +111,19 @@ public class Main
         Graph gr = createLinkedList(10000);
         BFTIterLinkedList(gr);
 
-        DirectedGraph dirGra = createRandomDAGIter(7);
-
-        /*System.out.println(dirGra.nodeList);
-
-        System.out.println(dirGra.nodeList.get(0).adjList);
-        System.out.println(dirGra.nodeList.get(1).adjList);
-        System.out.println(dirGra.nodeList.get(2).adjList);
-        System.out.println(dirGra.nodeList.get(3).adjList);*/
-
-
+        
 
        
 
     }
 
-    
+
+}
 
 
-    /*
+
+
+/*
         Tester code for DFSRec
         Graph gr = new Graph();
 
@@ -257,6 +251,29 @@ public class Main
 
         System.out.println(gs.BFTIter(gr));
         
-        */
+        
+        //Tester for Khans
+        DirectedGraph dirGra = new DirectedGraph();
 
-}
+        dirGra.addNode("0");
+        dirGra.addNode("1");
+        dirGra.addNode("2");
+        dirGra.addNode("3");
+        dirGra.addNode("4");
+        dirGra.addNode("5");
+
+        dirGra.addDirectedEdge(dirGra.nodeList.get(5), dirGra.nodeList.get(2));
+        dirGra.addDirectedEdge(dirGra.nodeList.get(5), dirGra.nodeList.get(0));
+        dirGra.addDirectedEdge(dirGra.nodeList.get(4), dirGra.nodeList.get(0));
+        dirGra.addDirectedEdge(dirGra.nodeList.get(4), dirGra.nodeList.get(1));
+        dirGra.addDirectedEdge(dirGra.nodeList.get(2), dirGra.nodeList.get(3));
+        dirGra.addDirectedEdge(dirGra.nodeList.get(3), dirGra.nodeList.get(1));
+  
+
+        TopSort ts = new TopSort();
+
+        System.out.println(ts.Kahns(dirGra));
+        for(Node n : ts.Kahns(dirGra))
+        {
+            System.out.print(n.getValue() + " ");
+        }*/
