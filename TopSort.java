@@ -61,4 +61,47 @@ public class TopSort
 
         return sorted;
     }
+
+
+    ArrayList<Node> mDFS(final DirectedGraph graph)
+    {
+        ArrayList<Node> sorted = new ArrayList<>();
+        Stack<Node> stack = new Stack<>();
+
+        boolean visited[] = new boolean[graph.nodeList.size()];
+
+        for(Node n : graph.nodeList)
+        {
+            if(!visited[graph.nodeList.indexOf(n)])
+            {
+                visited[graph.nodeList.indexOf(n)] = true;
+                mDFSHelper(n,visited,graph,stack);
+            }
+           
+        }
+
+        while(!stack.isEmpty())
+        {
+            sorted.add(stack.pop());
+        }
+
+
+        return sorted;
+    }
+
+    void mDFSHelper(Node node, boolean[] visited, DirectedGraph graph, Stack<Node> stack)
+    {
+        for(Node n : node.adjList)
+        {
+            if(!visited[graph.nodeList.indexOf(n)])
+            {
+                visited[graph.nodeList.indexOf(n)] = true;
+                mDFSHelper(n, visited, graph, stack);
+            }
+        }
+
+        stack.push(node);
+
+
+    }
 }

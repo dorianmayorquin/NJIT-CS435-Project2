@@ -111,7 +111,6 @@ public class Main
         Graph gr = createLinkedList(10000);
         BFTIterLinkedList(gr);
 
-        
 
        
 
@@ -274,6 +273,37 @@ public class Main
 
         System.out.println(ts.Kahns(dirGra));
         for(Node n : ts.Kahns(dirGra))
+        {
+            System.out.print(n.getValue() + " ");
+        }
+
+
+        //Tester for mDFS
+        DirectedGraph dirGra = new DirectedGraph();
+
+        dirGra.addNode("A");
+        dirGra.addNode("B");
+        dirGra.addNode("C");
+        dirGra.addNode("D");
+        dirGra.addNode("E");
+        dirGra.addNode("F");
+        dirGra.addNode("G");
+        dirGra.addNode("H");
+
+        dirGra.addDirectedEdge(dirGra.nodeList.get(0), dirGra.nodeList.get(1));
+        dirGra.addDirectedEdge(dirGra.nodeList.get(0), dirGra.nodeList.get(3));
+        dirGra.addDirectedEdge(dirGra.nodeList.get(2), dirGra.nodeList.get(3));
+        dirGra.addDirectedEdge(dirGra.nodeList.get(2), dirGra.nodeList.get(6));
+        dirGra.addDirectedEdge(dirGra.nodeList.get(2), dirGra.nodeList.get(7));
+        dirGra.addDirectedEdge(dirGra.nodeList.get(3), dirGra.nodeList.get(6));
+        dirGra.addDirectedEdge(dirGra.nodeList.get(7), dirGra.nodeList.get(4));
+        dirGra.addDirectedEdge(dirGra.nodeList.get(7), dirGra.nodeList.get(5));
+        
+  
+
+        TopSort ts = new TopSort();
+
+        for(Node n : ts.mDFS(dirGra))
         {
             System.out.print(n.getValue() + " ");
         }*/

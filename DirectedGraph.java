@@ -43,8 +43,4 @@ public class DirectedGraph
 
         return nodes;
     }
-    public List<Node> getAllNodesTemp()
-    {
-        return nodeList;
-    }
 }
