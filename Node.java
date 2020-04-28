@@ -4,6 +4,7 @@ public class Node
 {
     String nodeValue;
     List<Node> adjList = new ArrayList<>();
+    List<Edge> edgeAdjList = new ArrayList<>();
 
     Node(String val)
     {

@@ -111,6 +111,15 @@ public class Main
         Graph gr = createLinkedList(10000);
         BFTIterLinkedList(gr);
 
+        WeightedGraph wg = new WeightedGraph();
+        
+        wg.addNode("0");
+        wg.addNode("1");
+        wg.addNode("2");
+
+        wg.addWeightedEdge(wg.nodeList.get(0),wg.nodeList.get(1), 5);
+        wg.addWeightedEdge(wg.nodeList.get(0),wg.nodeList.get(1), 5);
+        wg.removeDirectedEdge(wg.nodeList.get(0),wg.nodeList.get(1));
 
        
 
