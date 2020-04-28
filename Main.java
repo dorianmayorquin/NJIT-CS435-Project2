@@ -106,6 +106,31 @@ public class Main
 
     }
 
+    static WeightedGraph createRandomCompleteWeightedGraph(final int n)
+    {
+        WeightedGraph wg = new WeightedGraph();
+        Random rand = new Random();
+        int random = rand.nextInt(50) + 1;
+
+        for(int i = 0; i < n; i++)
+        {
+            wg.addNode(Integer.toString(i));
+        }
+
+        for(int i = 0; i < n; i++)
+        {
+            for(int j = 0; j < n; j++)
+            {
+                wg.addWeightedEdge(wg.nodeList.get(i), wg.nodeList.get(j), random);
+                random = rand.nextInt(50) + 1;
+            }
+        }
+
+
+        return wg;
+    }
+
+
     public static void main(String[] args)
     {       
         Graph gr = createLinkedList(10000);
@@ -121,6 +146,8 @@ public class Main
         wg.addWeightedEdge(wg.nodeList.get(0),wg.nodeList.get(1), 5);
         wg.removeDirectedEdge(wg.nodeList.get(0),wg.nodeList.get(1));
 
+        wg = createRandomCompleteWeightedGraph(5);
+
        
 
     }
@@ -132,6 +159,21 @@ public class Main
 
 
 /*
+
+        Tester for completeWeightedRandom:
+
+        int i = 0;
+        for(Node n : wg.nodeList)
+        {
+            for(Edge e : n.edgeAdjList)
+            {
+                System.out.println("From " + e.source.getValue() + " To " + e.destination.getValue() +
+                "weight " + e.weight);
+            }
+        }
+
+
+        ////
         Tester code for DFSRec
         Graph gr = new Graph();
 

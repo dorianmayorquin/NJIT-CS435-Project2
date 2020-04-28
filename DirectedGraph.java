@@ -11,11 +11,11 @@ public class DirectedGraph
 
    void addDirectedEdge(final Node first, final Node second)
     {
-        if(first.adjList.indexOf(second) != -1)
+        if(first.adjList.indexOf(second) != -1) // If first is adjList of second
         {
             return;
         }
-        else if(second.adjList.indexOf(first) != -1)
+        else if(second.adjList.indexOf(first) != -1) //if second is in adjList of first
         {
             return;
         }

@@ -20,8 +20,18 @@ public class WeightedGraph
             }
         }
 
-        Edge edge = new Edge(first,second,weight);
-        first.edgeAdjList.add(edge);
+        for(Edge e : second.edgeAdjList)
+        {
+            if(e.destination == first)
+            {
+                return;
+            }
+        }
+        if(first != second)
+        {
+            Edge edge = new Edge(first,second,weight);
+            first.edgeAdjList.add(edge);
+        }
 
 
     }
