@@ -130,6 +130,23 @@ public class Main
         return wg;
     }
 
+    static WeightedGraph createLinkedListWeighted(final int n)
+    {
+        WeightedGraph wg = new WeightedGraph();
+
+        for(int i = 0; i < n; i++)
+        {
+            wg.addNode(Integer.toString(i));
+        }
+        for(int i = 0; i < n-1; i++)
+        {
+            wg.addWeightedEdge(wg.nodeList.get(i), wg.nodeList.get(i+1),1);
+        }
+
+
+        return wg;
+    }
+
 
     public static void main(String[] args)
     {       
@@ -146,7 +163,7 @@ public class Main
         wg.addWeightedEdge(wg.nodeList.get(0),wg.nodeList.get(1), 5);
         wg.removeDirectedEdge(wg.nodeList.get(0),wg.nodeList.get(1));
 
-        wg = createRandomCompleteWeightedGraph(5);
+        wg = createLinkedListWeighted(5);
 
        
 
