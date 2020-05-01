@@ -56,6 +56,29 @@ public class TreadmillMazeSolver
         for (Map.Entry<Node,Node> entry : parent.entrySet())  
         System.out.println("Key = " + entry.getKey().nodeValue +  ", Value = " + entry.getValue().nodeValue);
         */
+        Node start = new Node();
+        Node finish = new Node();
+        for (Map.Entry<Node,Node> entry : parent.entrySet())
+         {
+             if(entry.getKey().nodeValue == "S")
+             {
+                 start = entry.getKey();
+             }
+             else if(entry.getKey().nodeValue == "H")
+             {
+                 finish = entry.getKey();
+             }
+         }
+         
+
+         while(finish != start)
+         {
+             result.add(finish);
+             finish = parent.get(finish);
+         }
+         result.add(start);
+
+        
 
 
         return result;

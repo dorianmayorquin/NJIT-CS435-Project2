@@ -190,6 +190,7 @@ public class Main
         TreadmillMazeSolver tr = new TreadmillMazeSolver();
 
         tr.dijkstras(wg);
+        //tr.dijkstras(createRandomCompleteWeightedGraph(1000));
 
 
        
