@@ -56,19 +56,8 @@ public class TreadmillMazeSolver
         for (Map.Entry<Node,Node> entry : parent.entrySet())  
         System.out.println("Key = " + entry.getKey().nodeValue +  ", Value = " + entry.getValue().nodeValue);
         */
-        Node start = new Node();
-        Node finish = new Node();
-        for (Map.Entry<Node,Node> entry : parent.entrySet())
-         {
-             if(entry.getKey().nodeValue == "S")
-             {
-                 start = entry.getKey();
-             }
-             else if(entry.getKey().nodeValue == "H")
-             {
-                 finish = entry.getKey();
-             }
-         }
+        Node start = graph.nodeList.get(0);
+        Node finish = graph.nodeList.get(graph.nodeList.size()-1);
          
 
          while(finish != start)
@@ -82,5 +71,13 @@ public class TreadmillMazeSolver
 
 
         return result;
+    }
+
+    ArrayList<Node> astar(final WeightedGraph graph)
+    {
+        ArrayList<Node> result = new ArrayList<>();
+        return result;
+
+
     }
 }
