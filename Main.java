@@ -155,15 +155,42 @@ public class Main
 
         WeightedGraph wg = new WeightedGraph();
         
-        wg.addNode("0");
-        wg.addNode("1");
-        wg.addNode("2");
+        wg.addNode("S");//0
+        wg.addNode("A");//1
+        wg.addNode("B");//2
+        wg.addNode("C");//3
+        wg.addNode("D");//4
+        wg.addNode("E");//5
+        wg.addNode("F");//6
+        wg.addNode("G");//7
+        wg.addNode("H");//8
 
-        wg.addWeightedEdge(wg.nodeList.get(0),wg.nodeList.get(1), 5);
-        wg.addWeightedEdge(wg.nodeList.get(0),wg.nodeList.get(1), 5);
-        wg.removeDirectedEdge(wg.nodeList.get(0),wg.nodeList.get(1));
+        
 
-        wg = createLinkedListWeighted(5);
+        wg.addWeightedEdge(wg.nodeList.get(0),wg.nodeList.get(1), 2);
+        wg.addWeightedEdge(wg.nodeList.get(0),wg.nodeList.get(4), 20);
+
+        wg.addWeightedEdge(wg.nodeList.get(1),wg.nodeList.get(5), 3);
+
+        wg.addWeightedEdge(wg.nodeList.get(2),wg.nodeList.get(3), 7);
+
+        wg.addWeightedEdge(wg.nodeList.get(3),wg.nodeList.get(6), 5);
+
+        wg.addWeightedEdge(wg.nodeList.get(5),wg.nodeList.get(2), 1);
+        wg.addWeightedEdge(wg.nodeList.get(5),wg.nodeList.get(8), 4);
+        wg.addWeightedEdge(wg.nodeList.get(5),wg.nodeList.get(7), 6);
+
+        wg.addWeightedEdge(wg.nodeList.get(6),wg.nodeList.get(2), 0);
+
+        wg.addWeightedEdge(wg.nodeList.get(7),wg.nodeList.get(4), 2);
+
+        wg.addWeightedEdge(wg.nodeList.get(8),wg.nodeList.get(5), 2);
+        wg.addWeightedEdge(wg.nodeList.get(8),wg.nodeList.get(7), 1);
+
+        TreadmillMazeSolver tr = new TreadmillMazeSolver();
+
+        tr.dijkstras(wg);
+
 
        
 

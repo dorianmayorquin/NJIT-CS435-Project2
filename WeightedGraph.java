@@ -10,8 +10,7 @@ public class WeightedGraph
     }
 
     void addWeightedEdge(final Node first, final Node second, final int weight)
-    {
-
+    {        
         for(Edge e : first.edgeAdjList)
         {
             if(e.destination == second)
